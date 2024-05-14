@@ -1,31 +1,22 @@
-import tkinter as tk
-from tkinter import messagebox
 from controller.controller import AccessProfileController
 
-class AccessProfileView:
+class AccessProfileCLI:
     def __init__(self):
         self.controller = AccessProfileController()
 
-        self.root = tk.Tk()
-        self.root.title("Access Profile Manager")
-
-        self.label = tk.Label(self.root, text="Access Profile Name:")
-        self.label.pack()
-
-        self.entry = tk.Entry(self.root)
-        self.entry.pack()
-
-        self.button = tk.Button(self.root, text="Create Access Profile", command=self.create_access_profile)
-        self.button.pack()
+    def display_menu(self):
+        print("Welcome to Access Profile Manager")
+        print("1. Create Access Profile")
+        print("2. Exit")
 
     def create_access_profile(self):
-        profile_name = self.entry.get()
+        profile_name = input("Enter Access Profile Name: ")
         if not profile_name:
-            messagebox.showerror("Error", "Please enter a profile name")
+            print("Error: Please enter a profile name")
             return
 
         if not self.controller.authenticate():
-            messagebox.showerror("Error", "Authentication failed. Check logs for details.")
+            print("Error: Authentication failed. Check logs for details.")
             return
 
         payload = {
@@ -34,13 +25,22 @@ class AccessProfileView:
         }
         access_profile_id = self.controller.create_access_profile(payload)
         if access_profile_id:
-            messagebox.showinfo("Success", f"Access Profile created with ID: {access_profile_id}")
+            print(f"Success: Access Profile created with ID: {access_profile_id}")
         else:
-            messagebox.showerror("Error", "Failed to create Access Profile. Check logs for details.")
+            print("Error: Failed to create Access Profile. Check logs for details.")
 
     def run(self):
-        self.root.mainloop()
+        while True:
+            self.display_menu()
+            choice = input("Enter your choice: ")
+            if choice == "1":
+                self.create_access_profile()
+            elif choice == "2":
+                print("Exiting Access Profile Manager.")
+                break
+            else:
+                print("Invalid choice. Please try again.")
 
 if __name__ == "__main__":
-    view = AccessProfileView()
-    view.run()
+    cli = AccessProfileCLI()
+    cli.run()

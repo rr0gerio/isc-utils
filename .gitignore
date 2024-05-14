@@ -1,0 +1,35 @@
+# Arquivos gerados pelo Python
+__pycache__/
+*.py[cod]
+
+# Ambientes virtuais
+venv/
+env/
+myenv/
+*.env/
+bulkCreateAccessProfiles/
+
+# Arquivos de build e distribuição
+build/
+dist/
+
+# Arquivos de configuração locais
+*.yaml
+*.yml
+*.ini
+
+# Outros arquivos gerados
+*.log
+*.sqlite
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Arquivos de IDE
+.idea/
+.vscode/
+
+# Arquivos de cache e configuração de dependências
+*.cache
+*.egg-info/
+pip-selfcheck.json

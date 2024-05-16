@@ -10,9 +10,7 @@ setup(
         'idna==3.7',
         'PyYAML==5.3.1',
         'requests==2.26.0',
-        'tk==0.1.0',
         'urllib3==1.26.18'  
-        # Adicione outras dependências aqui conforme necessário
     ],
     entry_points={
         'console_scripts': [

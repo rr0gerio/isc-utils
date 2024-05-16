@@ -1,4 +1,4 @@
-from view.view import AccessProfileView
+from view.access_profile import AccessProfileView
 
 def main():
     view = AccessProfileView()

@@ -1,10 +1,11 @@
-import requests
 import certifi
-from model.config import ConfigModel
+from model.config_model import ConfigModel
+from utils.request_utils import RequestUtils
 
-
+request = RequestUtils()
+ 
 class AccessProfile:
-    def __init__(self, token):
+    def __init__(self, token) -> None:
         self.config = ConfigModel()
         self.token = token
 
@@ -17,7 +18,7 @@ class AccessProfile:
             'Authorization': f'Bearer {self.token}'
         }
 
-        response = requests.request("POST", url=url, headers=header, json=payload, verify=certifi.where())
+        response = request.request("POST", url=url, headers=header, json=payload, verify=certifi.where())
         if response.status_code == 200 or response.status_code == 201:
             return response.json()['id']
         else:

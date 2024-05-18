@@ -1,5 +1,5 @@
 import requests
-from model.config import ConfigModel
+from model.config_model import ConfigModel
 from model.identity import Identity
 
 class Search:

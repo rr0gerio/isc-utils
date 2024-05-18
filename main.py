@@ -1,12 +1,12 @@
-from view.access_profile import AccessProfileView
+from view.menu_view import MenuView
 
 def main():
-    view = AccessProfileView()
+    view = MenuView()
     view.run()
 
 if __name__ == "__main__":
     print("---------------------------------------------")
-    print("Initiating Bulk Operation - Access Profile")
+    print("            Initiating ISC ToolBox           ")
     print("---------------------------------------------")
 
     main()

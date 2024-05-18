@@ -1,6 +1,6 @@
 import certifi
 import requests
-from model.config import ConfigModel
+from model.config_model import ConfigModel
 
 
 class EntitlementModel:

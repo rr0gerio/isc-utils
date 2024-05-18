@@ -1,5 +1,5 @@
 import requests
-from model.config import ConfigModel
+from model.config_model import ConfigModel
 
 class SourceAPI:
     def __init__(self, token):

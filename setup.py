@@ -10,7 +10,8 @@ setup(
         'idna==3.7',
         'PyYAML==5.3.1',
         'requests==2.26.0',
-        'urllib3==1.26.18'  
+        'urllib3==1.26.18',
+        'prompt-toolkit==3.0.43'
     ],
     entry_points={
         'console_scripts': [

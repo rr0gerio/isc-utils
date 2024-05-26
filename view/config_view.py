@@ -1,11 +1,15 @@
 from prompt_toolkit import prompt
 from prompt_toolkit.completion import PathCompleter
+from utils.terminal_utils import terminal
 import sys
 
 
 class ConfigView:
-        
-    def prompt_for_config(self):
+    def __init__(self) -> None:
+        terminal.clear()
+
+    @staticmethod
+    def prompt_for_config():
         print("Please enter the following details to create the configuration file:")
 
         tenant = input("tenant: ")
@@ -19,8 +23,8 @@ class ConfigView:
                 "client_secret": client_secret,
             }
         }
-
-    def prompt_bulk_file_config(self, key_file_path):
+    @staticmethod
+    def prompt_bulk_file_config(key_file_path):
         print("Please enter the following details to create the configuration file: ")
 
         if sys.stdin.isatty() and sys.stdout.isatty():

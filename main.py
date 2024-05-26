@@ -5,8 +5,4 @@ def main():
     view.run()
 
 if __name__ == "__main__":
-    print("---------------------------------------------")
-    print("            Initiating ISC ToolBox           ")
-    print("---------------------------------------------")
-
     main()

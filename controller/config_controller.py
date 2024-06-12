@@ -13,7 +13,7 @@ class ConfigController:
         if config is None:
             config = self.view.prompt_for_config()
             self.model.save_config(config)
-            self.config_content = config
+        self.config_content = config
         return self.config_content
 
     def ensure_bulk_operation_configuration(self,key_file_path):

@@ -1,6 +1,5 @@
 import certifi
 import requests
-from model.config_model import ConfigModel
 from utils.config_manager_utils import ConfigManager
 
 
